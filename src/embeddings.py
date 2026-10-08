@@ -14,11 +14,12 @@ from typing import List
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from sentence_transformers import SentenceTransformer
+from langchain_core.embeddings import Embeddings
 from src.config import EMBEDDING_MODEL_NAME
 
 logger = logging.getLogger(__name__)
 
-class LocalSentenceTransformerEmbeddings:
+class LocalSentenceTransformerEmbeddings(Embeddings):
     """
     Direct SentenceTransformers embedding class compatible with LangChain FAISS VectorStore.
     Converts plain text strings into 384-dimensional dense float vectors.

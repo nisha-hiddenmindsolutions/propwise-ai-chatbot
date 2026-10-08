@@ -35,28 +35,6 @@ flowchart TD
     M --> N["Persist Lead Entry to data/leads.csv"]
 ```
 
----
-
-## 🧠 Manager Q&A Guide: "Why Did You Build It This Way?"
-
-When reviewing this codebase, your manager may ask architectural questions. Below are clear, technical justifications for every key decision:
-
-### 1. Why use LangGraph instead of simple sequential chains?
-> **Answer:** PropwiseAI requires multi-turn stateful conversations where user preferences accumulate over time (e.g., specifying "3 BHK in Jaipur" in turn 1 and "under 70 lakh" in turn 2). LangGraph allows us to build a explicit **StateGraph** with clear nodes (`understand_and_extract`, `evaluate_missing_info`, `property_search`, `document_rag_qna`, `generate_response`), enabling dynamic routing and session memory without rigid linear flow constraints.
-
-### 2. Why use FAISS + Local SentenceTransformers (`all-MiniLM-L6-v2`)?
-> **Answer:** 
-> 1. **Zero API Cost & Unlimited Runs:** Local HuggingFace sentence transformers run 100% locally on CPU without requiring paid OpenAI or Google API keys.
-> 2. **High-Speed Vector Search:** FAISS (Facebook AI Similarity Search) indexes dense vector embeddings to instantly rank property descriptions and match free-form text like *"sea view flat with modular kitchen"* or *"commercial office with high ROI"*.
-
-### 3. Why use a Hybrid Search (Pandas CSV Filter + FAISS Vector Search)?
-> **Answer:** Pure vector search can sometimes struggle with strict numerical constraints (e.g. price <= 7000000 or exact city name). We combined **hard relational filtering** (Pandas DataFrame) for mandatory criteria (City, Listing Type, Budget, BHK) with **soft vector similarity matching** (FAISS) for text descriptions and amenities. This delivers 100% accurate filtering with semantic relevance scoring.
-
-### 4. How does the system handle Lead Creation without an external API?
-> **Answer:** The `LeadManager` class (`src/lead_manager.py`) acts as the CRM persistence layer. When a user requests a **Site Visit**, **Callback**, or **Enquiry**, the bot auto-generates a unique `lead_id`, looks up the assigned property broker from `brokers.csv`, records customer details and timestamps, and appends the entry cleanly to `data/leads.csv`.
-
----
-
 ## 📁 File & Project Directory Structure
 
 ```

@@ -1,0 +1,17 @@
+lead_id,customer_name,phone,email,intent,selected_property_id,requested_action,preferred_date,preferred_time_slot,broker_id,source,status,created_at
+lead_9013,saniya sharma,+91 98765 43210,saniya@gmail.com,Rent,prop_mumbai_01,site_visit,2026-10-08,12:00 PM - 02:00 PM,brk_102,AI Chatbot,Pending Confirmation,2026-10-08T07:53:07Z
+lead_9014,Vikram Malhotra,+91 98123 99887,vikram@example.com,Callback,prop_mumbai_01,callback,,,brk_102,AI Chatbot,Callback Scheduled,2026-10-08T07:55:13Z
+lead_9001,Ananya Sharma,+91 98765 43210,ananya@example.com,Buy,prop_jaipur_01,site_visit,2026-10-10,11:00 AM - 01:00 PM,brk_101,AI Chatbot,Pending Confirmation,2026-10-06T12:00:00Z
+lead_9002,Vikram Malhotra,+91 98123 99887,vikram.m@example.com,Rent,prop_mumbai_01,callback,,,brk_102,AI Chatbot,Callback Scheduled,2026-10-06T12:05:00Z
+lead_9003,Rohan Verma,+91 97110 54321,rohan@example.com,Investment,prop_mumbai_03,enquiry,,,brk_102,AI Chatbot,New Lead,2026-10-06T12:10:00Z
+lead_9004,Ananya Test,+91 99999 88888,ananya.test@example.com,Buy,prop_jaipur_01,site_visit,2026-10-12,10:00 AM - 12:00 PM,brk_101,AI Chatbot,Pending Confirmation,2026-10-06T11:43:02Z
+lead_9005,Ananya Test,+91 99999 88888,ananya.test@example.com,Buy,prop_jaipur_01,site_visit,2026-10-12,10:00 AM - 12:00 PM,brk_101,AI Chatbot,Pending Confirmation,2026-10-06T11:44:39Z
+lead_9006,Vikram Malhotra,+91 98123 99887,vikram@example.com,Callback,prop_jaipur_01,callback,,,brk_101,AI Chatbot,Callback Scheduled,2026-10-06T12:17:11Z
+lead_9007,Rohan Gupta,+91 98989 12345,rohan.g@example.com,Buy,prop_jaipur_01,site_visit,2026-10-15,11:00 AM - 01:00 PM,brk_101,AI Chatbot,Pending Confirmation,2026-10-07T05:28:41Z
+lead_9008,Priya Sharma,+91 97777 44444,priya.s@example.com,Rent,prop_mumbai_01,callback,,,brk_102,AI Chatbot,Callback Scheduled,2026-10-07T05:28:41Z
+lead_9009,Nisha Teli,08830631380,nishateli08@gmail.com,Sale,prop_mumbai_02,site_visit,2026-10-07,10:00 AM - 12:00 PM,brk_102,AI Chatbot,Pending Confirmation,2026-10-07T08:55:42Z
+lead_9010,Vikram Malhotra,+91 98123 99887,vikram@example.com,Callback,prop_mumbai_02,callback,,,brk_102,AI Chatbot,Callback Scheduled,2026-10-07T09:12:56Z
+lead_9011,Test User,9876543210,test@example.com,Buy,,site_visit,2026-10-15,Morning (10 AM - 1 PM),brk_101,AI Chatbot,Pending Confirmation,2026-10-08T07:31:50Z
+lead_9012,Test User,9876543210,test@example.com,Buy,,site_visit,2026-10-15,Morning (10 AM - 1 PM),brk_101,AI Chatbot,Pending Confirmation,2026-10-08T07:44:54Z
+lead_9015,mukul,9876545678,mukul@example.com,Rent,prop_delhi_02,site_visit,2026-10-08,10:00 AM - 12:00 PM,brk_104,AI Chatbot,Pending Confirmation,2026-10-08T08:15:28Z
+lead_9016,Vikram Malhotra,+91 98123 99887,vikram@example.com,Callback,prop_delhi_02,callback,N/A,N/A,brk_104,AI Chatbot,Callback Scheduled,2026-10-08T08:50:45Z

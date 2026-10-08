@@ -1,0 +1,162 @@
+PropwiseAI – Customer AI Chatbot Functional Requirements & Conversation Flow
+
+Document Version: 1.0
+Scope: Customer / Website End-User
+Platform: PropwiseAI Real Estate Website
+
+1. Purpose
+This document defines the functional requirements and conversation flow for a customer-facing AI chatbot on the PropwiseAI real estate website. The chatbot must behave as a dynamic AI agent rather than a fixed FAQ or scripted questionnaire.
+The chatbot is intended only for customers / website visitors. Admin, manager, internal agent, CRM administration, and staff workflows are outside this scope.
+
+2. Website Context
+The PropwiseAI website supports property discovery for sale and rent, property categories, city-based discovery, property listings, and a realtor-oriented journey. The chatbot should complement this experience instead of replacing the existing property browsing interface.
+Visible property categories include Town House, Modern Villa, Apartment, Single Family, and Office. These values should be treated as dynamic inventory data rather than hard-coded chatbot content.
+
+3. Main Goal
+The chatbot should convert a natural-language customer requirement into a structured property search and guide the customer from discovery to enquiry.
+Core AI behavior: Understand -> Extract -> Ask Missing Information -> Search -> Match -> Recommend -> Answer -> Take Action -> Remember Context.
+
+4. Supported Customer Intents
+- Buy a property
+- Rent a property
+- Explore properties
+- Investment-oriented property search
+- Ask about a specific property
+- Find similar properties
+- Compare properties
+- Get recommendations
+- Schedule / request a site visit
+- Contact an agent / request a callback
+- Submit a property enquiry
+
+5. Overall User Flow
+Website Visitor -> AI Chatbot -> Intent Detection -> Requirement Extraction -> Missing Information -> Requirement Confirmation -> Property Search -> AI Matching -> Property Results -> Property Details / Compare / Similar Properties -> Site Visit / Enquiry / Callback -> Lead Creation
+
+6. Welcome Flow
+The chatbot should start with an open, natural conversation and provide quick options without forcing the user through a fixed form.
+Example: "Hi! I can help you find a property that matches your requirements. Are you looking to buy, rent, invest, or explore properties?"
+Suggested actions: Buy Property | Rent Property | Investment | Explore Properties
+
+7. Natural Language Intent Detection
+The customer must be able to type a complete requirement in one message. The AI should identify the intent and extract all available parameters.
+Example: "I need a 3 BHK apartment in Jaipur under 70 lakh with parking."
+The system should extract: Buy, Jaipur, Apartment, 3 BHK, maximum 70 lakh, Parking. The chatbot must not ask for these values again.
+
+8. Dynamic Requirement Collection
+The chatbot must collect only relevant information based on the detected intent.
+8.1 Buy Requirement
+- Preferred location / area
+- Budget or price range
+- Property type
+- BHK / bedroom requirement
+- Preferred size / area, when relevant
+- Furnishing preference, when relevant
+- Amenities such as parking, balcony, garden, lift, etc.
+- Possession / purchase timeline, when relevant
+8.2 Rent Requirement
+- Preferred location / area
+- Monthly rental budget
+- Property type
+- BHK / bedroom requirement
+- Furnishing preference
+- Move-in date
+- Amenities / parking / other preferences
+8.3 Investment Requirement
+- Investment budget
+- Preferred location
+- Property type
+- Investment objective
+- Expected holding period
+- Rental-income or capital-appreciation preference
+
+9. Dynamic Follow-Up Logic
+Questions must be adaptive. The chatbot must never follow a fixed sequence when the customer has already provided the information.
+Example: If the customer says "I need a 2 BHK flat for rent in Mumbai for up to 40,000 per month," the chatbot should ask only the next useful missing question, such as furnishing preference or move-in date.
+Optional questions may be skipped when enough information is available to perform a meaningful search.
+
+10. Requirement Confirmation
+Example: "Got it. You're looking for a 2 BHK apartment for rent in Mumbai, with a budget up to 40,000/month. Would you like me to find matching properties?"
+
+11. Property Search
+The chatbot must search the live property inventory through a backend API or service. Property information must not be invented by the AI.
+The search service should support filters such as location, property type, price/budget, BHK, listing type (sale/rent), furnishing, amenities and other available property attributes.
+
+12. AI Property Matching & Ranking
+Search results should be ranked according to requirement relevance. Mandatory filters should be considered first and preference-based attributes second.
+The AI may provide a short reason for each recommendation, such as: "Recommended because it matches your 3 BHK requirement, location preference and budget."
+
+13. Property Result Cards
+- Property image(s), if available
+- Property title / name
+- Location
+- Property type
+- BHK / bedrooms
+- Price or monthly rent
+- Key available features
+- Match / recommendation indicator, if implemented
+- View Details
+- Compare
+- Similar Properties
+- Request Site Visit / Enquire
+
+14. Property Details & Natural-Language Q&A
+After selecting a property, the chatbot must answer natural-language questions using the property's actual stored data:
+- Price / rent
+- Bedrooms / BHK
+- Property size
+- Parking availability
+- Furnishing
+- Amenities
+- Location
+- Site-visit availability or request process
+- Similar properties
+If information is unavailable, the chatbot must clearly state that the information is unavailable instead of guessing.
+
+15. Similar Property Search
+Customers should be able to request similar properties based on the selected property's attributes and their active preferences. Example: "Show me similar apartments under 80 lakh in the same area."
+
+16. Property Comparison
+Customers should be able to select two or more properties and ask the chatbot to compare them. Comparison may include price, rent, property type, BHK, size, location, furnishing, amenities and other available fields.
+The chatbot should present factual differences first and may provide a recommendation only when enough reliable data exists.
+
+17. AI Recommendations
+The chatbot may recommend properties based on the customer's stated requirements, browsing context and selected properties. Recommendations must use actual property data and must not claim guaranteed returns, appreciation or rental income.
+
+18. Site Visit Flow
+When the customer requests a site visit, collect the minimum information required by the backend:
+- Selected property
+- Customer name
+- Mobile number / contact information
+- Preferred date
+- Preferred time or time range
+- Optional message / special requirement
+If real-time availability is supported, the chatbot may show available slots. Otherwise it should create a site-visit request rather than falsely confirming an appointment.
+
+19. Lead / Enquiry Creation
+When a customer submits an enquiry, site-visit request or callback request, the chatbot should create or update a customer lead through the CRM/backend API.
+Suggested lead data: customer name, phone/email, intent, requirement summary, selected property, source = AI Chatbot, conversation/session reference, requested action and timestamp.
+
+20. Callback / Contact Request
+The customer should be able to request a callback without completing the full property search. The chatbot should collect the required contact details and create the callback request.
+
+21. Conversation Memory
+The chatbot must maintain session context so the user does not need to repeat previously provided information.
+Example: If the customer says "I need a 3 BHK in Jaipur" and later says "Show me something cheaper," the chatbot should retain Jaipur and 3 BHK and adjust the relevant requirement.
+
+22. Contextual Questions
+The chatbot should understand references such as "this property," "the second one," "cheaper one," "same area," "show similar," and "what about rent?" using active conversation context.
+
+23. No-Result Handling
+If no exact properties are found, the chatbot should explain that no exact match was found and offer alternatives such as a slightly wider budget, expanded location, relaxed optional preference, similar property type, or closest available matches.
+The chatbot must not silently change mandatory user constraints.
+
+24. Data Accuracy & AI Safety
+- Property facts must come from the property database/API.
+- The AI must not invent price, availability, amenities, location, owner information or other property facts.
+- Owner/contact details should be shown only when authorized and available.
+- Investment insights must be informational, not guaranteed financial advice.
+- Appointment confirmation must only occur when supported by the backend.
+- If data is missing, the chatbot must state that the information is unavailable.
+
+25. Core Development Principle
+The chatbot must be an AI-driven customer agent, not a fixed question-and-answer bot. Its primary behavior should be: Understand -> Extract -> Ask Missing Information -> Search -> Match -> Recommend -> Answer -> Take Action -> Remember Context.

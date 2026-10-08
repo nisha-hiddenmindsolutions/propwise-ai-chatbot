@@ -1,0 +1,5 @@
+broker_id,name,agency_name,phone,email,license_number,rating,avatar_url
+brk_101,Rajesh Sharma,Apex Prime Realty,+91 98290 12345,rajesh@apexrealty.com,RERA-JPR-2023-8891,4.9,https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80
+brk_102,Priya Kapoor,Urban Nest Properties,+91 98111 67890,priya@urbannest.in,RERA-MUM-2022-4412,4.8,https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80
+brk_103,Amitabh Verma,Heritage City Homes,+91 99282 33445,amitabh@heritagehomes.com,RERA-JPR-2021-3321,4.7,https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80
+brk_104,Sneha Kulkarni,Capital Realty Advisors,+91 98200 55443,sneha@capitalrealty.in,RERA-DEL-2023-7712,4.9,https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80

@@ -51,6 +51,27 @@ st.markdown("""
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
+    /* Enforce high-contrast, 100% visible text for chat messages across all themes */
+    div[data-testid="stChatMessage"] {
+        background-color: #FFFFFF !important;
+        border: 1px solid #E2E8F0 !important;
+        border-radius: 12px !important;
+        padding: 14px 18px !important;
+        margin-bottom: 12px !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+    }
+    div[data-testid="stChatMessage"] * {
+        color: #0F172A !important;
+    }
+    div[data-testid="stChatMessage"] p, 
+    div[data-testid="stChatMessage"] span, 
+    div[data-testid="stChatMessage"] li, 
+    div[data-testid="stChatMessage"] div {
+        color: #0F172A !important;
+        font-size: 0.98rem !important;
+        line-height: 1.5 !important;
+    }
+
     /* Sidebar Styling */
     section[data-testid="stSidebar"] {
         background-color: #FFFFFF;
